@@ -1,0 +1,12 @@
+<html><table id="statistics" class="table table-condensed table-striped"></table>
+</html>
+  <script src="https://unpkg.com/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+<script src="https://unpkg.com/sheetrock@1.2.0/dist/sheetrock.min.js"></script>
+<script>
+var mySpreadsheet = 'https://docs.google.com/spreadsheets/d/1qT1LyvoAcb0HTsi2rHBltBVpUBumAUzT__rhMvrz5Rk/edit#gid=0';
+
+// Load an entire worksheet.
+$('#statistics').sheetrock({
+  url: mySpreadsheet
+});
+</script>
