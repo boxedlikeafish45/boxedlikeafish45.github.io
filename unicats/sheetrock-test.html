@@ -12,7 +12,7 @@ var mySpreadsheet = 'https://docs.google.com/spreadsheets/d/1qT1LyvoAcb0HTsi2rHB
 // Load all hitters and format with DataTables.
 $('#raw-table').sheetrock({
   url: mySpreadsheet,
-  query: "select A,B,C,D,E,L order by L desc",
+  query: "select A,B,C order by B desc",
 }).on('sheetrock:loaded', function () {
   $(this).DataTable();
 });
