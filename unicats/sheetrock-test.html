@@ -11,7 +11,7 @@ var mySpreadsheet = 'https://docs.google.com/spreadsheets/d/11HFCNSIfV7Jj7VPKXL7
 
 $('#raw-table').sheetrock({
   url: mySpreadsheet,
-  query: "select A,B,C order by B desc",
+  query: "select A,B,C order by A desc",
 }).on('sheetrock:loaded', function () {
   $(this).DataTable();
 });
