@@ -1,14 +1,17 @@
 <html><table id="statistics" class="table table-condensed table-striped"></table>
 </html>
-  <script src="https://unpkg.com/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="https://unpkg.com/sheetrock@1.2.0/dist/sheetrock.min.js"></script>
-
+<script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+<link href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css" rel="stylesheet" type="text/css">
 
 <script>
 var mySpreadsheet = 'https://docs.google.com/spreadsheets/d/11HFCNSIfV7Jj7VPKXL7goe56yyKEoSpbMncK-kpne20/edit#gid=0';
 
-// Load an entire worksheet.
-$('#statistics').sheetrock({
-  url: mySpreadsheet
+$('#raw-table').sheetrock({
+  url: mySpreadsheet,
+  query: "select A,B,C,D,E,L order by L desc",
+}).on('sheetrock:loaded', function () {
+  $(this).DataTable();
 });
 </script>
