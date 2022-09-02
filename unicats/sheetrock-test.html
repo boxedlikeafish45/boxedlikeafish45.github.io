@@ -9,9 +9,10 @@
 <script>
 var mySpreadsheet = 'https://docs.google.com/spreadsheets/d/1qT1LyvoAcb0HTsi2rHBltBVpUBumAUzT__rhMvrz5Rk/edit#gid=0';
 
+// Load all hitters and format with DataTables.
 $('#raw-table').sheetrock({
   url: mySpreadsheet,
-  query: "select A,B,C order by A desc",
+  query: "select A,B,C,D,E,L order by L desc",
 }).on('sheetrock:loaded', function () {
   $(this).DataTable();
 });
