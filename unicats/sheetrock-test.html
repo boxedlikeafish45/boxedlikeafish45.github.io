@@ -7,14 +7,14 @@
 <link href="https://unpkg.com/datatables@1.10.18/media/css/jquery.dataTables.min.css" rel="stylesheet" type="text/css">
 
 <script>
-var mySpreadsheet = 'https://docs.google.com/spreadsheets/d/11HFCNSIfV7Jj7VPKXL7goe56yyKEoSpbMncK-kpne20/edit#gid=0';
+var mySpreadsheet = 'https://docs.google.com/spreadsheets/d/1qT1LyvoAcb0HTsi2rHBltBVpUBumAUzT__rhMvrz5Rk/edit#gid=0';
   // bruh im so tired use this sheet for testing https://docs.google.com/spreadsheets/d/1qT1LyvoAcb0HTsi2rHBltBVpUBumAUzT__rhMvrz5Rk/edit#gid=0
+  // personal testsheet https://docs.google.com/spreadsheets/d/11HFCNSIfV7Jj7VPKXL7goe56yyKEoSpbMncK-kpne20/edit#gid=0
 
 // Load all hitters and format with DataTables.
 $('#raw-table').sheetrock({
   url: mySpreadsheet,
   query: "select A,B,C order by B desc",
-   fetchSize: 3,
 }).on('sheetrock:loaded', function () {
   $(this).DataTable();
 });
