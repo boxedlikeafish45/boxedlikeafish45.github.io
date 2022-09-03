@@ -1,4 +1,8 @@
 <html><table id="raw-table" class="table table-condensed table-striped"></table>
+  <p>
+make sure to use the search box to find any cats by name / subspecies / mane / etc.<br>
+TEXT LMAO im gonna make a spreadsheet soon lol
+</p>
 </html>
 <script src="https://unpkg.com/jquery@3.6.0/dist/jquery.slim.min.js"></script>
 <script src="https://unpkg.com/sheetrock@1.2.0/dist/sheetrock.min.js"></script>
@@ -12,9 +16,10 @@ var mySpreadsheet = 'https://docs.google.com/spreadsheets/d/1qT1LyvoAcb0HTsi2rHB
   // personal testsheet https://docs.google.com/spreadsheets/d/11HFCNSIfV7Jj7VPKXL7goe56yyKEoSpbMncK-kpne20/edit#gid=0
 
 // Load all hitters and format with DataTables.
+  // image, name, species, cutie mark, mane, wings, special traits
 $('#raw-table').sheetrock({
   url: mySpreadsheet,
-  query: "select A,B,C order by B desc",
+  query: "select A,B,C,D,E,F,G order by B desc",
 }).on('sheetrock:loaded', function () {
   $(this).DataTable();
 });
