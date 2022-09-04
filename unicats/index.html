@@ -10,18 +10,20 @@ make sure to use the search box to find any cats by name / subspecies / mane / e
   <br>i assume this falls under the mit liscence FEEL FREE TO <a href="https://github.com/boxedlikeafish45/boxedlikeafish45.github.io/blob/main/unicats/index.html">STEAL THIS CODE</a> LMAO i put some notes in there as well!!</p>
  
 
+  
 </html>
 <script src="https://unpkg.com/jquery@3.6.0/dist/jquery.slim.min.js"></script>
 <script src="https://unpkg.com/sheetrock@1.2.0/dist/sheetrock.min.js"></script>
 <script src="https://unpkg.com/datatables@1.10.18/media/js/jquery.dataTables.min.js"></script>
 <link href="https://unpkg.com/datatables@1.10.18/media/css/jquery.dataTables.min.css" rel="stylesheet" type="text/css">
 
+
+
 <script>
 var mySpreadsheet = 'https://docs.google.com/spreadsheets/d/1qT1LyvoAcb0HTsi2rHBltBVpUBumAUzT__rhMvrz5Rk/edit#gid=0';
-  // OK SO BASICALLY this website is very fragile for some reason?? some spreadsheets work and some dont so if you copy the testing spreadsheet (which is the line below) and work on that, it will most likely function?? bruh idk i tested this for too long. copy pasting works too, sometimes!
-  // use this sheet for testing https://docs.google.com/spreadsheets/d/1qT1LyvoAcb0HTsi2rHBltBVpUBumAUzT__rhMvrz5Rk/edit#gid=0
-
-  // OK AND ANOTHER NOTE: you see how it say "query: select a,b,c" etc? you have to put in the letters of the columns (separated by commas, no spaces!). the order column is.. mostly useless lmao
+  
+  
+  
 $('#raw-table').sheetrock({
   url: mySpreadsheet,
   query: "select A,B,C,D,E,F,G order by A desc",
