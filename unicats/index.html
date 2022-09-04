@@ -1,21 +1,66 @@
+<html>  
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+.collapsible {
+  background-color: #777;
+  color: white;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+}
+
+.active, .collapsible:hover {
+  background-color: #555;
+}
+
+.content {
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
+  background-color: #f1f1f1;
+}
+</style>
+</head>
+<body>
 
 
-<html>  <p>
-breeding rules
-  <br>
-  searching guide
-  <br>
-  about this website + code credits
-  <br>
-  make sure to use the search box to find any cats by name / subspecies / mane / etc.<br>
-  how to search: you can search two words and it will look for a result that contains both, to look for a specific phrase put the phrase in "quotes" !!!
-  <br>if you click the arrow buttons it will sort by that column alphabetically or reverse alphabetically!
-</p><table id="raw-table" class="table table-condensed table-striped"></table>
-  <p>CREDIT TO SHEETROCK AND DATATABLES (AND JQUERY) I DIDN'T MAKE ANY OF THIS CODE im not good at coding (so sad)
-  <br>THIS CODE IS SPECIFICALLY FROM <a href="https://chriszarate.github.io/sheetrock/#datatables">CHRIS ZARATE</a> TYSM!!!
-  <br>i assume this falls under the mit liscence FEEL FREE TO <a href="https://boxedlikeafish45.github.io/unicats/tutorial.html">STEAL THIS CODE</a> LMAO i put some notes in there as well!!</p>
- 
+<p>My Unicat Herd! :)</p>
+<button type="button" class="collapsible">Breeding Rules</button>
+<div class="content">
+  <p>coming soon</p>
+</div>
+<button type="button" class="collapsible">Guide to Searching</button>
+<div class="content">
+  <p>coming soon</p>
+</div>
+<button type="button" class="collapsible">About + Code Credits</button>
+<div class="content">
+  <p>none of this code was made by me! the sheetrock.js table code was made by <a href="https://chriszarate.github.io/sheetrock/#datatables">chris zarate</a> and these collapsible buttons were from <a href="https://www.w3schools.com/howto/howto_js_collapsible.asp">w3schools</a>!
+ <br>the libraries i used were jquery, sheetrock, and datatables!
+    <br>feel free to use this code for your own herd or other website - source can be found on <a href="https://github.com/boxedlikeafish45/boxedlikeafish45.github.io/blob/main/unicats/index.html">this page</a>! :D</p>
+</div>
 
+<script>
+var coll = document.getElementsByClassName("collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.display === "block") {
+      content.style.display = "none";
+    } else {
+      content.style.display = "block";
+    }
+  });
+}
+</script>
   
 </html>
 <script src="https://unpkg.com/jquery@3.6.0/dist/jquery.slim.min.js"></script>
