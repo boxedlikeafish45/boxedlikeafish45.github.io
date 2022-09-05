@@ -19,7 +19,7 @@ var mySpreadsheet = 'https://docs.google.com/spreadsheets/d/11XGlVq8xZuT2lvgkTFK
   
 $('#raw-table').sheetrock({
   url: mySpreadsheet,
-  query: "select A,B,C order by B desc",
+  query: "select A,B,C,D order by B desc",
 }).on('sheetrock:loaded', function () {
   $(this).DataTable();
 });
