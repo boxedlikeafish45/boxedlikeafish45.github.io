@@ -96,7 +96,7 @@ var mySpreadsheet = 'https://docs.google.com/spreadsheets/d/15iUCxeaWq3t1_NV04PB
   
 $('#raw-table').sheetrock({
   url: mySpreadsheet,
-  query: "select A,B,C,D,E,F order by C desc",
+  query: "select A,B,C,D,E,F order by B desc",
 }).on('sheetrock:loaded', function () {
   $(this).DataTable();
 });
