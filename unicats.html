@@ -38,13 +38,13 @@
   request: i breed one of my unicats with one of yours, or two of your unicats, for free. i may keep one and then you have first pick of buying unicats.</p>
 </div>
   
-  <button type="button" class="collapsible">(Solo) Breeding Rules</button>
+  <button type="button" class="collapsible">Breeding Rules</button>
 <div class="content">
-  <p>you don’t need my permission, just notify me through DMs / notes and add what the breeding is for.<br>
-  <i>exception: permission is needed to breed my first-gens & wildcard kittens with other first-gens & wildcard kittens.</i><br>
+  <p>you don’t need my permission to do a solo breeding, just notify me through DMs / notes and add what the breeding is for.<br>
 any first pick / discount rules will mirror your own.<br>
 partial breedings are ok if i can design the rest of the kittens.<br>
-if my account is inactive, you can reserve any unicats for when i come back. </p>
+if my account is inactive, you can reserve any unicats for when i come back.
+  <p><i>collabs and breeding requests should be open ATM</i>
 </div>
   
 <button type="button" class="collapsible">Guide to Searching</button>
@@ -55,14 +55,26 @@ if my account is inactive, you can reserve any unicats for when i come back. </p
 <br><b>Preserved text.</b> DataTables 1.10 adds the ability to search for an exact phrase by enclosing the search text in double quotes. For example <u>"Allan Fife"</u> will match only text which contains the phrase <u>Allan Fife</u>. It will not match <u>Allan is in Fife</u>.
 <br><i>Taken from the DataTables website</i></p>
 </div>
-<button type="button" class="collapsible">About + Code Credits</button>
+
+  
+  </p><table id="raw-table" class="display"></table>
+  
+  <button type="button" class="collapsible">About + Code Credits</button>
 <div class="content">
-  <p>none of this code was made by me! the sheetrock.js table code was made by <a href="https://chriszarate.github.io/sheetrock/#datatables">chris zarate</a> and these collapsible buttons were from <a href="https://www.w3schools.com/howto/howto_js_collapsible.asp">w3schools</a>!
- <br>the libraries i used were jquery, sheetrock, and datatables!
+  <p>sheetrock.js table code - <a href="https://chriszarate.github.io/sheetrock/#datatables">chris zarate</a>
+    <br>collapsible buttons - <a href="https://www.w3schools.com/howto/howto_js_collapsible.asp">w3schools</a>
+    <br>URL search - <a href="https://stackoverflow.com/a/35220727">wouter on stackoverflow</a>
+ <br>libraries used - jquery, sheetrock, datatables
     <br>feel free to use this code for your own herd or other website - source can be found on <a href="https://github.com/boxedlikeafish45/boxedlikeafish45.github.io/blob/main/unicats/index.html">this page</a>! :D</p>
 </div>
   
-  </p><table id="raw-table" class="display"></table>
+  how to make your own herd database site - coming soon!
+  
+  </html>
+<script src="https://unpkg.com/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+<script src="https://unpkg.com/sheetrock@1.2.0/dist/sheetrock.min.js"></script>
+<script src="https://unpkg.com/datatables@1.10.18/media/js/jquery.dataTables.min.js"></script>
+<link href="https://unpkg.com/datatables@1.10.18/media/css/jquery.dataTables.min.css" rel="stylesheet" type="text/css">
 
 <script>
 var coll = document.getElementsByClassName("collapsible");
@@ -79,17 +91,7 @@ for (i = 0; i < coll.length; i++) {
     }
   });
 }
-</script>
-  
-</html>
-<script src="https://unpkg.com/jquery@3.6.0/dist/jquery.slim.min.js"></script>
-<script src="https://unpkg.com/sheetrock@1.2.0/dist/sheetrock.min.js"></script>
-<script src="https://unpkg.com/datatables@1.10.18/media/js/jquery.dataTables.min.js"></script>
-<link href="https://unpkg.com/datatables@1.10.18/media/css/jquery.dataTables.min.css" rel="stylesheet" type="text/css">
 
-
-
-<script>
 var mySpreadsheet = 'https://docs.google.com/spreadsheets/d/15iUCxeaWq3t1_NV04PBzMwKaJUGRy83WJ-52uoIbYGU/edit#gid=0';
   
   
@@ -100,4 +102,18 @@ $('#raw-table').sheetrock({
 }).on('sheetrock:loaded', function () {
   $(this).DataTable();
 });
+  
+  
+  $(document).ready( function() {
+  
+    var searchHash = location.hash.substr(1),
+        searchString = searchHash.substr(searchHash.indexOf('search='))
+		                  .split('&')[0]
+		                  .split('=')[1];
+  
+  
+  $('#example').dataTable( {
+    "oSearch": { "sSearch": searchString }
+  } );
+} )
 </script>
