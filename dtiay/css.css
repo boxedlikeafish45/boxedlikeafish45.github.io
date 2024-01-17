@@ -1,0 +1,66 @@
+* 
+{box-sizing: border-box;}
+
+img 
+{max-width: 100%;
+max-height: 100%;}
+
+.world img
+{height: 100px;}
+
+.ocname
+{font-size: 150%;}
+
+.character 
+{background-color: white;
+border: 5px solid darkgrey;
+margin: 4px;
+padding: 10px;
+max-width:900px;}
+
+.row::after 
+{content: "";
+display: table;
+clear: both;}
+
+.ocheader
+{background-color: gainsboro;
+float: left;
+width: 65%;
+margin: 4px;
+padding: 10px;}
+
+.blurb
+{background-color: gainsboro;
+float: left;
+width: 30%;
+margin: 4px;
+padding: 10px;}
+
+.blurb img
+{height: 20px;
+width: 40px;
+object-fit: fill;}
+
+.gallery
+{background-color: gainsboro;
+float: left;
+width: 30%;
+margin: 4px;
+padding: 10px;}
+
+.gallery img
+{width: 200px;
+height: 200px
+object-fit: contain;
+text-align: center;}
+
+.infoholder
+{float: left;
+margin: 4px;
+width: 65%;}
+
+.info
+{background-color: gainsboro;
+margin-bottom: 8px;
+padding: 10px;}
