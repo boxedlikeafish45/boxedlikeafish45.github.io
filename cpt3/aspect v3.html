@@ -1,0 +1,212 @@
+<style>
+table, th, td {border: 1px solid;}
+  
+td:hover {font-weight: bold; cursor: pointer;}
+
+.center {font-weight: bold; text-align: center;}
+
+.modal {
+display: none; /* Hidden by default */
+position: fixed; /* Stay in place */
+z-index: 1; /* Sit on top */
+padding-top: 100px; /* Location of the box */
+left: 0; top: 0;
+width: 100%; /* Full width */
+height: 100%; /* Full height */
+overflow: auto; /* Enable scroll if needed */
+background-color: rgb(0,0,0); /* Fallback color */
+background-color: rgba(0,0,0,0.4); /* Black w/ opacity */}
+
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;}
+
+</style>
+<html>
+<h2>The long-awaited (by me, for 3 years) <s>classpect</s> aspect text</h2>
+
+<hr>
+
+<p class='center'>Instructions:</p>
+Before you are six pairs of two boxes each. You will be selecting <b>one box</b> out of the twelve presented to you.
+<br>Your goal here is to review all twelve boxes, then <b>select</b> the box that contains words that you resonate with (or relate to). However, the words in the other side of the pair should feel antagonistic. If you feel indifferent to one or both sides of a pair, then <b>neither box</b> is the correct option for you.
+<br>Your result should consist of <b>one answer!</b> If you find yourself going back and selecting more boxes, then you're doing it wrong!! PLEASE
+<p><i>(If you're still uncertain: the box that you dislike is often more obvious than the one you relate to.)</i>
+
+<hr>
+
+<p class='center'>Pair 1</p>
+<table><tr><td onclick="space()">Creation, Choice, Creative Expression, Will of the Universe, Surrender, Art, Ambiance, Meditation, Candy, Detachment, Abstraction, Dreams, Cold, Acceptance</td>
+<td onclick="time()">Destruction, Volition, Retaliation, Spite, Hunger, Death, Mechanisms, Material Reality, Inevitability, Endings, Conflict, Chaos, Profanity, Heat, Meat, Gasoline, Cruelty</td></tr></table>
+
+<br><p class='center'>Pair 2</p>
+<table><tr><td onclick="heart()">Subjectivity, Soul, Singular Perspectives, Persona(lity), Passion, Identity, Charisma, Romance, Intimacy, Empathy, Theatre, Obsession, Relationship Dynamics</td>
+<td onclick="mind()">Objectivity, Logic, Multiple Perspectives, Clarity, Research, Utility, Allocation, Systems, Puzzles, Strategy, Prediction, Decisions, Outcomes, Chess, Guiding Laws</td></tr></table>
+
+<br><p class='center'>Pair 3</p>
+<table><tr><td onclick="hope()">Fantasy, Utopia, Exceptions,
+Innocence, Heroism, Reinvention, Perfection, Impossibility, Suspension of Disbelief, Sugarcoating, Silver Linings, Denial, Lying</td>
+<td onclick="rage()">Truth, Harsh Reality, Rigid Structure, Disillusionment, Sobriety, Sanity, Memory, Limitation, Routine, Pragmaticsm, Doubt, Bitterness, Futility, Tantrums</td></tr></table>
+
+<br><p class='center'>Pair 4</p>
+<table><tr><td onclick="light()">Symbology, Answers, Fortune, Luck, Destiny, Storytelling, Conclusions, Association, Assumption, Fate, Coherency, Holistics, Payoff, Hints, Canon, Cliches</td>
+<td onclick="voiid()">"  ", Maybe, I dunno, Whim, Flippancy, Confusion, Guesswork, Rumours, Myth, Nonsense, Silence, Mystery, Secrets, Surprises, Irrelevancy, Fanon</td></tr></table>
+
+<br><p class='center'>Pair 5</p>
+<table><tr><td onclick="life()">Solutions, Health, Politeness, Social Obligations, Support, Stability, Harmony, Growth, Appearences, Teamwork, Nature, Nurture, Food, Saftey, Complacency</td>
+<td onclick="doom()">Problems, Sickness, Spiraling, Dysfunction, Isolation, Fatalism, Depression, Coping, Crying, Venting, Rot, Decay, Rest, Reprieve, Resignation, Closure</td></tr></table>
+
+<br><p class='center'>Pair 6</p>
+<table><tr><td onclick="breath()">The Future, “The Easy Way”, Trust in Intuition, Freedom, The Wind, Trailblazing, Individuality, Moving Forward, Freeflow, Calm, Forgive, Forget, Boredom</td>
+<td onclick="blood()">The Past, “The Hard Way”, Trust in Others, Bonds, Oaths, Promises, Grudges, Family, Judgement, Suffering, Comraderie, Ordeals, Stress, Sacrifice, Debt, Scars, Guilt</td></tr></table>
+
+<hr>
+
+<p class="center">Credits</p>
+
+<ul>
+<li> The aspect section was made by /u/d3wdr0p on reddit, with phrasing adjustments and coding done by me. I am unaffiliated with the user, but this aspect test has by far been the easiest option I've found.
+<li>There is nothing else yet
+</ul>
+
+<hr>
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span id='xButton' class='close'>&times;</span>
+    <p id="modalAspect">You got mail! you perverse fuck</p>
+	    <a id="modalLink">Click here to learn more about your aspect.</p>
+	<img id='modalImg' src="img.png" alt="A placeholder image. Seriously, how did you get here.">
+  </div>
+
+</div>
+
+<script>
+
+// Get the modal, button, and X button
+var modal = document.getElementById("myModal");
+var span = document.getElementById("xButton");
+var image = document.getElementById('modalImg');
+var link = document.getElementById('modalLink');
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+
+function space() 
+{modal.style.display = "block";
+document.getElementById("modalAspect").innerText = "Your aspect is: Space!";
+image.src = 'space.png';
+image.alt= 'An icon for the Space aspect.';
+link.href= 'space.html';}
+
+function time() 
+{modal.style.display = "block";
+document.getElementById("modalAspect").innerText = "Your aspect is: Time!";
+image.src = 'time.png';
+image.alt= 'An icon for the Time aspect.';
+link.href= 'time.html';}
+
+function heart()
+{modal.style.display = "block";
+document.getElementById("modalAspect").innerText = "Your aspect is: Heart!";
+image.src = 'heart.png';
+image.alt= 'An icon for the Heart aspect.';
+link.href= 'heart.html';}
+
+function mind()
+{modal.style.display = "block";
+document.getElementById("modalAspect").innerText = "Your aspect is: Mind!";
+image.src = 'mind.png';
+image.alt= 'An icon for the Mind aspect.';
+link.href= 'mind.html';}
+
+function hope()
+{modal.style.display = "block";
+document.getElementById("modalAspect").innerText = "Your aspect is: Hope!";
+image.src = 'hope.png';
+image.alt= 'An icon for the Hope aspect.';
+link.href= 'hope.html';}
+
+function rage()
+{modal.style.display = "block";
+document.getElementById("modalAspect").innerText = "Your aspect is: Rage!";
+image.src = 'rage.png';
+image.alt= 'An icon for the Rage aspect.';
+link.href= 'rage.html';}
+
+function light()
+{modal.style.display = "block";
+document.getElementById("modalAspect").innerText = "Your aspect is: Light!";
+image.src = 'light.png';
+image.alt= 'An icon for the Light aspect.';
+link.href= 'light.html';}
+
+function voiid()
+{modal.style.display = "block";
+document.getElementById("modalAspect").innerText = "Your aspect is: Void!";
+image.src = 'void.png';
+image.alt= 'An icon for the Void aspect.';
+link.href= 'voiid.html';}
+
+function life()
+{modal.style.display = "block";
+document.getElementById("modalAspect").innerText = "Your aspect is: Life!";
+image.src = 'life.png';
+image.alt= 'An icon for the Life aspect.';
+link.href= 'life.html';}
+
+function doom()
+{modal.style.display = "block";
+document.getElementById("modalAspect").innerText = "Your aspect is: Doom!";
+image.src = 'doom.png';
+image.alt= 'An icon for the Doom aspect.';
+link.href= 'doom.html';}
+
+function breath()
+{modal.style.display = "block";
+document.getElementById("modalAspect").innerText = "Your aspect is: Breath!";
+image.src = 'breath.png';
+image.alt= 'An icon for the Breath aspect.';
+link.href= 'breath.html';}
+
+function blood()
+{modal.style.display = "block";
+document.getElementById("modalAspect").innerText = "Your aspect is: Blood!";
+image.src = 'blood.png';
+image.alt= 'An icon for the Blood aspect.';
+link.href= 'blood.html';}
+
+</script>
+
+</html>
